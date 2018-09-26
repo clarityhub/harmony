@@ -1,0 +1,25 @@
+#!/usr/bin/env node
+
+const program = require('commander');
+const start = require('../src/scripts/start');
+const migrate = require('../src/scripts/migrate');
+
+program
+    .command('start')
+    .action(start);
+
+program
+    .command('migrate')
+    .action(function () {
+        migrate('up');
+    });
+
+program
+    .command('migrate:rollback')
+    .action(function () {
+        migrate('down');
+    });
+
+program
+    .parse(process.argv);
+

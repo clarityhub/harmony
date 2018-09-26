@@ -1,0 +1,19 @@
+{
+  "name": "@clarityhub/harmony-server",
+  "version": "0.0.1",
+  "description": "",
+  "bin": "./bin/harmony",
+  "main": "src/index.js",
+  "publishConfig": {
+    "access": "public"
+  },
+  "scripts": {},
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "chalk": "^2.4.1",
+    "commander": "^2.18.0",
+    "nodemon": "^1.18.4",
+    "validate.js": "^0.12.0"
+  }
+}
