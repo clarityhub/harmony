@@ -2,7 +2,9 @@
   "name": "@clarityhub/harmony-server",
   "version": "0.0.1",
   "description": "",
-  "bin": "./bin/harmony",
+  "bin": {
+    "harmony": "./bin/harmony"
+  },
   "main": "src/index.js",
   "publishConfig": {
     "access": "public"
