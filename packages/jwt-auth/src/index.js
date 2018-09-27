@@ -1,3 +1,3 @@
-const jwtAuthContext = require('jwt-auth-context');
+const jwtAuthContext = require('./jwt-auth-context');
 
 module.exports = { jwtAuthContext };
