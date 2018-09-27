@@ -10,5 +10,5 @@ module.exports = async (key, token, options) => {
         throw new Error('A valid token was not provided');
     }
 
-    return await verify(token, key, jwtOptions);
+    return await verify(token, key, options);
 };
