@@ -1,4 +1,4 @@
-const Auth = require('@clarityhub/harmony-server');
+const { Auth } = require('@clarityhub/harmony-server');
 
 module.exports = (bottle) => {
     return async ({ req }) => {
