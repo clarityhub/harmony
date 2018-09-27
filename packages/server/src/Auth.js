@@ -7,3 +7,5 @@ module.exports = class Auth {
         return this.id;
     }
 }
+
+module.exports.NoAuth = new Auth({ id: -1 });

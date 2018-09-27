@@ -1,11 +1,19 @@
 const { Auth } = require('@clarityhub/harmony-server');
+const decodeToken = require('./utils/decodeToken');
 
-module.exports = (cb) => {
+module.exports = (key, options, cb) => {
     return async ({ req }) => {
         const { authorization } = req.headers;
 
-        // Todo, need Different Auth types, like NotAuthed for when no jwt is provided
-        const auth = new Auth({ id: authorization });
+        if (!authorization) {
+            return Auth.NoAuth;
+        }
+        
+        // TODO better parsing
+        const token = authorization.split(' ')[1];
+
+        const decoded = await decodeToken(key, token, options);
+        const auth = new Auth(decoded);
 
         return cb(auth);
     }

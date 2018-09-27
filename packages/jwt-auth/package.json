@@ -13,5 +13,9 @@
   "license": "MIT",
   "peerDependencies": {
     "@clarityhub/harmony-server": "0.0.3"
+  },
+  "dependencies": {
+    "jsonwebtoken": "^8.3.0",
+    "promisify-node": "^0.5.0"
   }
 }
