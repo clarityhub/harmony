@@ -7,7 +7,7 @@ module.exports = (bottle) => {
         const auth = new Auth({ id: authorization });
 
         if (bottle) {
-            bottle.service('Auth', () => auth);
+            bottle.factory('Auth', () => auth);
         }
 
         return {
