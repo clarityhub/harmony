@@ -1,4 +1,4 @@
-module.exports = class Auth {
+class Auth {
     constructor({ id }) {
         this.id = id;
     }
@@ -8,4 +8,5 @@ module.exports = class Auth {
     }
 }
 
+module.exports = Auth;
 module.exports.NoAuth = new Auth({ id: -1 });
