@@ -1,19 +1,11 @@
 const { Auth } = require('@clarityhub/harmony-server');
 
-module.exports = (bottle) => {
+module.exports = (cb) => {
     return async ({ req }) => {
         const { authorization } = req.headers;
 
         const auth = new Auth({ id: authorization });
 
-        if (bottle) {
-            bottle.factory('Auth', () => auth);
-        }
-
-        return {
-            bottle,
-            auth,
-        };
-
+        return cb(auth);
     }
 }
