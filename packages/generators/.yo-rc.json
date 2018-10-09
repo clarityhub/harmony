@@ -1,0 +1,9 @@
+{
+  "generator-node": {
+    "promptValues": {
+      "authorName": "Ivan Montiel",
+      "authorEmail": "idmontie@gmail.com",
+      "authorUrl": ""
+    }
+  }
+}
