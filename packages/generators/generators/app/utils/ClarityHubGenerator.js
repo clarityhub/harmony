@@ -3,7 +3,7 @@ const colors = require('colors');
 const path = require('path');
 const dir = require('node-dir');
 
-module.exports = class NextivaGenerator extends Generator {
+module.exports = class ClarityHubGenerator extends Generator {
   constructor(args, opts) {
     super(args, opts);
 
