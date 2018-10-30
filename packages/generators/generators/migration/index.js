@@ -5,10 +5,16 @@ module.exports = class extends ClarityHubGenerator {
   constructor(args, opts) {
     super(args, opts);
 
-    this.argument('directory', {
+    this.option('directory', {
       type: String,
+      alias: 'd',
       desc: 'The directory to create the migration',
       default: `${process.cwd()}/database/migrations`
+    });
+    this.option('table', {
+      type: String,
+      desc: 'Create a table migration',
+      default: false
     });
     this.argument('migrationName', {
       type: String,
