@@ -6,9 +6,9 @@ module.exports = (key, options, cb) => {
         const { authorization } = req.headers;
 
         if (!authorization) {
-            return Auth.NoAuth;
+            return cb(Auth.NoAuth);
         }
-        
+
         // TODO better parsing
         const token = authorization.split(' ')[1];
 

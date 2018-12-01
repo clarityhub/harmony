@@ -3,10 +3,10 @@ module.exports = class Controller {
         this.ioc = ioc;
     }
 
-    async middleware(Middleware) {
+    middleware(Middleware) {
         const middleware = new Middleware(this.ioc);
 
-        await middleware.check();
+        return middleware.check();
     }
 
     validate(obj, ClassValidator) {
