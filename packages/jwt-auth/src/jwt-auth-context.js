@@ -3,14 +3,17 @@ const decodeToken = require('./utils/decodeToken');
 
 module.exports = (key, options, cb) => {
     return async ({ req }) => {
-        const { authorization } = req.headers;
+        const { authorization, Authorization } = req.headers;
 
-        if (!authorization) {
+        // Normalize name
+        const a = Authorization || authorization;
+
+        if (!a) {
             return cb(Auth.NoAuth);
         }
 
         // TODO better parsing
-        const token = authorization.split(' ')[1];
+        const token = a.split(' ')[1];
 
         const decoded = await decodeToken(key, token, options);
         const auth = new Auth(decoded);
